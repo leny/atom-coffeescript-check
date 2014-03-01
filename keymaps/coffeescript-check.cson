@@ -1,2 +1,2 @@
 ".editor":
-  "alt-cmd-shift-c": "coffeescript-check:check"
+  "cmd-k cmd-c": "coffeescript-check:check"

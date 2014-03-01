@@ -11,5 +11,7 @@
   "engines": {
     "atom": ">0.39.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "coffee-script": "~1.7"
+  }
 }
