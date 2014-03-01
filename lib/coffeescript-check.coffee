@@ -1,13 +1,26 @@
-coffeeCheck = ( editor ) ->
-    console.log "coffeeCheck"
-    # TODO check if current file is CoffeeScript
-    # TODO check if had selection
-    # TODO get selection
-    # TODO compile selection
-    # TODO show the result in a pane, or console, modal, dialog, I FUCKIN' DON'T KNOW YET
+coffee = require( "coffee-script" ).compile
+
+oCompilerOptions =
+    bare: yes
+
+coffeeCheck = ( oEditor ) ->
+    return unless oEditor.getCursorScopes().indexOf( "source.litcoffee" ) isnt -1 or oEditor.getCursorScopes().indexOf( "source.coffee" ) isnt -1
+    return unless ( sSelection = oEditor.getSelectedText() )
+    try
+        sCompiledSelection = coffee sSelection, oCompilerOptions
+    catch oError
+        return atom.confirm
+            message: "CoffeeScript Check - Oops !"
+            detailedMessage: oError.message
+    atom.confirm
+        message: "CoffeeScript Check - Result"
+        detailedMessage: sCompiledSelection
+        buttons:
+            "Ok": no
+            "Copy to clipboard": ->
+                atom.clipboard.write sCompiledSelection
 
 module.exports =
     activate: ->
         atom.workspaceView.command "coffeescript-check:check", ".editor", ->
-            currentPane = atom.workspaceView.getActivePaneItem()
-            coffeeCheck currentPane
+            coffeeCheck atom.workspaceView.getActivePaneItem()
