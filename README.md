@@ -1,4 +1,4 @@
-# CoffeScript Check
+# CoffeeScript Check
 
 > an **Atom** package
 
