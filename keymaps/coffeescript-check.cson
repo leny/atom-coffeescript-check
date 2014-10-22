@@ -1,2 +1,5 @@
-".editor":
+".platform-linux .editor, .platform-win32 .editor":
+  "ctrl-k ctrl-c": "coffeescript-check:check"
+
+".platform-darwin .editor":
   "cmd-k cmd-c": "coffeescript-check:check"
