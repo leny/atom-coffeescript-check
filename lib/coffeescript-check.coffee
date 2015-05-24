@@ -4,20 +4,26 @@ oCompilerOptions =
     bare: yes
 
 coffeeCheck = ( oEditor ) ->
-    unless oEditor.getCursorScopes().indexOf( "source.litcoffee" ) isnt -1 or oEditor.getCursorScopes().indexOf( "source.coffee" ) isnt -1
+    oCursorBufferPosition = oEditor.getCursorBufferPosition()
+    oScopesForBufferDescription = ( oEditor.scopeDescriptorForBufferPosition oCursorBufferPosition ).scopes
+
+    unless oScopesForBufferDescription.indexOf( "source.litcoffee" ) isnt -1 or oScopesForBufferDescription.indexOf( "source.coffee" ) isnt -1
         return atom.confirm
             message: "CoffeeScript Check - Oops !"
             detailedMessage: "The selected text is not Coffeescript or Literate CoffeeScript !"
+
     unless ( sSelection = oEditor.getSelectedText() )
         oEditor.selectLine()
         oEditor.getSelectedText()
+
     try
         sCompiledSelection = coffee sSelection, oCompilerOptions
-        throw new Error "The selected text compiles to an empty string !" unless sCompiledSelection.trim()
+        throw new error "the selected text compiles to an empty string !" unless sCompiledSelection.trim()
     catch oError
         return atom.confirm
-            message: "CoffeeScript Check - Oops !"
+            message: "coffeescript check - oops !"
             detailedMessage: oError.message
+
     atom.confirm
         message: "CoffeeScript Check - Result"
         detailedMessage: sCompiledSelection
@@ -28,5 +34,5 @@ coffeeCheck = ( oEditor ) ->
 
 module.exports =
     activate: ->
-        atom.workspaceView.command "coffeescript-check:check", ".editor", ->
-            coffeeCheck atom.workspaceView.getActivePaneItem()
+        atom.commands.add "atom-text-editor", "coffeescript-check:check", ->
+            coffeeCheck atom.workspace.getActiveTextEditor()

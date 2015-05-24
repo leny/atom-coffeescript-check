@@ -1,5 +1,5 @@
-".platform-linux .editor, .platform-win32 .editor":
+".platform-linux atom-text-editor, .platform-win32 atom-text-editor":
   "ctrl-k ctrl-c": "coffeescript-check:check"
 
-".platform-darwin .editor":
+".platform-darwin atom-text-editor":
   "cmd-k cmd-c": "coffeescript-check:check"
