@@ -1,5 +1,10 @@
-".platform-linux atom-text-editor, .platform-win32 atom-text-editor":
-  "ctrl-k ctrl-c": "coffeescript-check:check"
+# With the success of Atom, it's really difficult to choose keybinding that
+# will not enter in conflict whit anyone else's packages, so I let this file
+# empty to set your own keybindings.
+# For you informations, here's an exemple of my keybindings for wrap-n-pad
 
-".platform-darwin atom-text-editor":
-  "cmd-k cmd-c": "coffeescript-check:check"
+# ".platform-linux atom-text-editor, .platform-win32 atom-text-editor":
+#   "ctrl-k ctrl-c": "coffeescript-check:check"
+#
+# ".platform-darwin atom-text-editor":
+#   "cmd-k cmd-c": "coffeescript-check:check"
