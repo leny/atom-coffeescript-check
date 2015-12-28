@@ -1,7 +1,7 @@
 {
   "name": "coffeescript-check",
   "main": "./lib/main",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "An Atom package to compile a coffeescript selection to check its javascript output.",
   "repository": "https://github.com/leny/atom-coffeescript-check",
   "license": "MIT",
