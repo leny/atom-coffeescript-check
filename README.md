@@ -4,6 +4,10 @@
 
 * * *
 
+**NOTE:** this package is not actively maintained anymore. You can find a new, up-to-date module at [jhessin/atom-coffee-check](https://github.com/jhessin/atom-coffee-check).
+
+* * *
+
 ## Usage
 
 Select a text, then use the command `CoffeeScript Check: Check`: if the selection (or the whole file if there's no selection) is *CoffeeScript* or *Literate CoffeeScript*, the plugin compiles it and shows the result in a notification.
