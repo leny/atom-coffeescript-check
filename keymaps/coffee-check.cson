@@ -8,3 +8,6 @@
 #
 # ".platform-darwin atom-text-editor:not([mini])":
 #   "cmd-k cmd-c": "coffee-check:check"
+
+'atom-workspace':
+  'unset': 'coffee-check:check'
