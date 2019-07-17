@@ -4,6 +4,8 @@
 
 This is a fork of Leny's great work [CoffeeScript Check](https://atom.io/packages/coffeescript-check). His work is quite outdated though. This project uses the latest version of CoffeeScript 2 whereas his uses v1.9
 
+# NOTICE: No longer maintained. I'm sorry but I don't really have time to work on it anymore. Feel free to use/create a fork if you are interested.
+
 ---
 
 ## Usage
