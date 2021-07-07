@@ -1,14 +1,18 @@
 {
-  "name": "coffeescript-check",
+  "name": "coffee-check",
   "main": "./lib/main",
-  "version": "0.2.0",
-  "description": "An Atom package to compile a coffeescript selection to check its javascript output.",
-  "repository": "https://github.com/leny/atom-coffeescript-check",
+  "version": "0.0.3",
+  "description": "An Atom package to compile a coffeescript selection to check its javascript output using the latest coffeescript.",
+  "repository": "https://github.com/jhessin/atom-coffee-check.git",
   "license": "MIT",
   "engines": {
     "atom": ">=1.3"
   },
+  "scripts": {
+    "start": "coffee -o lib/ --no-header -cbw src/",
+    "postinstall": "coffee -o lib/ --no-header -cb src/"
+  },
   "dependencies": {
-    "coffee-script": "~1.9"
+    "coffeescript": "latest"
   }
 }

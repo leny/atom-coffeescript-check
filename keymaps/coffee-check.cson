@@ -1,10 +1,13 @@
 # With the success of Atom, it's really difficult to choose keybindings that
 # will not enter in conflict whit anyone else's packages, so I let this file
 # empty to set your own keybindings.
-# For you informations, here's an exemple of my keybindings for coffeescript-check
+# For you informations, here's an exemple of my keybindings for coffee-check
 
 # ".platform-linux atom-text-editor:not([mini]), .platform-win32 atom-text-editor:not([mini])":
-#   "ctrl-k ctrl-c": "coffeescript-check:check"
+#   "ctrl-k ctrl-c": "coffee-check:check"
 #
 # ".platform-darwin atom-text-editor:not([mini])":
-#   "cmd-k cmd-c": "coffeescript-check:check"
+#   "cmd-k cmd-c": "coffee-check:check"
+
+'atom-workspace':
+  'unset': 'coffee-check:check'
